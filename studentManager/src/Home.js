@@ -1,7 +1,12 @@
+import { Link } from "react-router-dom";
+
 const Home = () => {
     return (
         <div class="w-full bg-gradient-to-r from-orange-100 to-green-100 pt-10 pb-10 font-serif">
+            <div class="flex justify-evenly">
             <h2 class="text-xl font-bold text-center text-orange-500">Student Management System</h2>
+            <Link to="/Login"><button class="bg-green-600 rounded-md p-1 text-white hover:bg-orange-500">Logout</button></Link>
+            </div>
             <hr/>
             <div class="w-10/12 m-auto">
                 <h2 class="text-lg text-green-600 font-semibold  text-center pt-5">Send Message:</h2>
