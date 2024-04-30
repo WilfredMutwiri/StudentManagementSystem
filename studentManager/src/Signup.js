@@ -9,9 +9,9 @@ const Signup = () => {
         </svg>
         <form action="" class="justify-center">
             <label htmlFor="" class="text-lg">Username</label> <br></br>
-            <input type="text" class="p-1 w-full md:w-64" placeholder="e.g Mark Juma"/><br></br>
+            <input type="text" class="p-1 w-full md:w-64 rounded-md" placeholder="e.g Mark Juma"/><br></br>
             <label htmlFor="" class="text-lg">Password</label><br></br>
-            <input type="password" class="p-1 w-full md:w-64" placeholder="Enter password" required /><br></br>
+            <input type="password" class="p-1 w-full md:w-64 rounded-md" placeholder="Enter password" required /><br></br>
             <Link to="/Home"><button class="bg-orange-500 p-2 mt-5 w-24 text-white rounded-md hover:bg-green-600">Create Account</button></Link>
         </form>
         <p class="pt-5">Already have an account? <a href="/Login" class="text-green-600 hover:text-orange-500">Login.</a></p>
