@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Signup = () => {
     return (
         <div class="w-full pt-10 pb-10 bg-gray-100 h-screen">
         <div class="w-[80%] md:w-[30%] bg-gray-300 p-5 m-auto mt-10 mb-10 shadow-md rounded-md">
@@ -12,12 +12,12 @@ const Login = () => {
             <input type="text" class="p-1 w-full md:w-64" placeholder="e.g Mark Juma"/><br></br>
             <label htmlFor="" class="text-lg">Password</label><br></br>
             <input type="password" class="p-1 w-full md:w-64" placeholder="Enter password" required /><br></br>
-            <Link to="/Home"><button class="bg-orange-500 p-2 mt-5 w-24 text-white rounded-md hover:bg-green-600">Login</button></Link>
+            <Link to="/Home"><button class="bg-orange-500 p-2 mt-5 w-24 text-white rounded-md hover:bg-green-600">Create Account</button></Link>
         </form>
-        <p class="pt-5">Don't have an account? <a href="/Signup" class="text-green-600 hover:text-orange-500">Create Account</a></p>
+        <p class="pt-5">Already have an account? <a href="/Login" class="text-green-600 hover:text-orange-500">Login.</a></p>
         </div>
         </div>
     );
 }
  
-export default Login;
+export default Signup;
