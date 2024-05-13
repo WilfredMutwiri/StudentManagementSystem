@@ -18,7 +18,7 @@ const Login = () => {
             <h2 className="text-pink-700 text-2xl p-1">Manager</h2>
             </div>
             <hr />
-            <div className="flex w-10/12 pt-20 m-auto gap-5">
+            <div className="block md:flex w-10/12 pt-20 m-auto gap-5">
                 <div className='flex-1'>
                 <div className="flex p-3">
                 <span className="text-orange-500 text-2xl bg-black p-2 rounded-md">X</span>

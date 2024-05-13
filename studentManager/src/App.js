@@ -5,6 +5,7 @@ import Home from "./Home";
 import Login from './login';
 import Signup from './Signup';
 import AdminDashboard from './components/AdminDashboard';
+import Footer from './components/footer';
 function App() {
   return (
     <Router>
@@ -16,6 +17,7 @@ function App() {
      <Route path='/Signup' element={<Signup/>}></Route>
      <Route path='/admin' element={<AdminDashboard/>}></Route>
     </Routes>
+    <Footer/>
     </div>
     </Router>
   );
