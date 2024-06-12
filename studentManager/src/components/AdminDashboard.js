@@ -19,25 +19,14 @@ const AdminDashboard = () => {
     }
     return (
         <div>
+            <hr />
             <div className=" w-full overflow-hidden ">
             <div className="flex justify-between">
-            <div className="flex p-3">
-                <span className="text-orange-500 text-2xl bg-black p-1 rounded-md">J</span>
-                <h2 className="text-pink-700 text-2xl p-1">abana</h2>
-            </div>
-            <div className="flex gap-0 md:gap-3 pr-2 md:pr-5 pt-4 -ml-2 md:-ml-0">
-                <h2 className='pt-2'>Admin</h2>
-                <span className="text-pink-600 pt-2">@mark</span>
-                <div>
-                    <Link to="/login">
-                    <Button gradientDuoTone='pinkToOrange'>Logout</Button>
-                    </Link>
-                </div>
-                <CiMenuKebab className="text-2xl text-black mt-2 hidden" ref={menuIcon} onClick={handleRevealMenu}/>
+            <div className="flex float-right">
+                <CiMenuKebab className="text-2xl text-black" ref={menuIcon} onClick={handleRevealMenu}/>
             </div>
             </div>
             </div>
-            <hr />
             <section>
                 <div className="block md:flex w-11/12 m-auto mt-10 gap-10">
                     {/* left section */}
@@ -48,16 +37,16 @@ const AdminDashboard = () => {
                     <h2 className='text-center p-3'>Admin <span className='text-pink-500'>@Mark</span></h2>
                     <div className='pt-4'>
                         <ul className='flex flex-col gap-5 text-center'>
-                            <li className='p-2 hover:bg-gray-100 rounded-md text-orange-500 hover:text-pink-500 cursor-pointer flex gap-3'><span><FaUsers className="text-xl"/></span>Teachers <span className='text-black'>100+</span></li>
-                            <li className='p-2 hover:bg-gray-100 rounded-md text-orange-500 hover:text-pink-500 cursor-pointer flex gap-3'><span><RiSchoolFill className="text-xl"/></span>Classes <span className='text-black'>24+</span></li>
-                            <li className='p-2 hover:bg-gray-100 rounded-md text-orange-500 hover:text-pink-500 cursor-pointer flex gap-3'><span><GrUserWorker className="text-xl"/></span>Workers <span className='text-black'>100+</span></li>
+                            <li className='p-2 hover:bg-gray-100 rounded-md text-orange-500 hover:text-pink-500 cursor-pointer flex gap-3'><span><FaUsers className="text-xl"/></span>Teachers Square</li>
+                            <li className='p-2 hover:bg-gray-100 rounded-md text-orange-500 hover:text-pink-500 cursor-pointer flex gap-3'><span><RiSchoolFill className="text-xl"/></span>Parents Square</li>
+                            <li className='p-2 hover:bg-gray-100 rounded-md text-orange-500 hover:text-pink-500 cursor-pointer flex gap-3'><span><GrUserWorker className="text-xl"/></span>Workers Square</li>
                         </ul>
                     </div>
                     <IoMdClose className="text-center mt-4 mx-auto hidden"/>
                 </div>
                 {/* right section */}
                 <div className="bg-gray-200 rounded-md shadow-sm shadow-pink-500 p-3 flex-1" ref={bodyRef}>
-                    <h2 className="text-xl text-center font-semibold text-pink-500">Mbitini Secondary School</h2>
+                    <h2 className="text-xl text-center font-semibold text-pink-500">Mbitini Girls High School</h2>
                     <hr/>
                     <div className="block md:grid grid-cols-3 pt-3 gap-6">
                         {/* teachers div */}

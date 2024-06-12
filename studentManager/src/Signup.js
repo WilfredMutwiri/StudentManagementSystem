@@ -2,10 +2,6 @@ import {Button, Label, TextInput} from 'flowbite-react'
 const Login = () => {
     return (
         <div className="w-full">
-            <div className="flex p-3">
-            <span className="text-orange-500 text-2xl bg-black p-1 rounded-md">J</span>
-            <h2 className="text-pink-700 text-2xl p-1">abana</h2>
-            </div>
             <hr />
             <div className="flex w-10/12 pt-20 m-auto gap-6">
                 <div className='flex-1'>

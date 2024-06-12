@@ -6,10 +6,12 @@ import Login from './login';
 import Signup from './Signup';
 import AdminDashboard from './components/AdminDashboard';
 import Footer from './components/footer';
+import { NavBarComp } from './components/NavBar';
 function App() {
   return (
     <Router>
     <div className="App">
+      <NavBarComp/>
     <Routes>
     <Route exact path='/' element={<Login/>}></Route>
      <Route path='/Home' element={<Home/>}></Route>
