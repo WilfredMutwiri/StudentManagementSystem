@@ -14,15 +14,15 @@ const Login = () => {
     return (
         <div className="w-full">
             <div className="flex p-3">
-            <span className="text-orange-500 text-2xl bg-black p-1 rounded-md">X</span>
-            <h2 className="text-pink-700 text-2xl p-1">Manager</h2>
+            <span className="text-orange-500 text-2xl bg-black p-1 rounded-md">J</span>
+            <h2 className="text-pink-700 text-2xl p-1">abana</h2>
             </div>
             <hr />
             <div className="block md:flex w-10/12 pt-20 m-auto gap-5">
                 <div className='flex-1'>
                 <div className="flex p-3">
-                <span className="text-orange-500 text-2xl bg-black p-2 rounded-md">X</span>
-                <h2 className="text-pink-700 text-2xl p-2">Manager</h2>
+                <span className="text-orange-500 text-2xl bg-black p-2 rounded-md">J</span>
+                <h2 className="text-pink-700 text-2xl p-2">abana</h2>
                 </div>  
                 <p>
                     Your ultimate school manager, send sms to your students'parents, teachers and other workers with ease,

@@ -9,8 +9,8 @@ const Footercomp = () => {
                     <div className="block md:flex justify-between">
                         <div className=''>
                         <div className="flex p-3">
-                            <span className="text-orange-500 text-sm bg-black p-1 rounded-md">X</span>
-                            <h2 className="text-pink-700 text-sm p-1">Manager</h2>
+                            <span className="text-orange-500 text-sm bg-black p-1 rounded-md">J</span>
+                            <h2 className="text-pink-700 text-sm p-1">abana</h2>
                             </div>
                             <h2 className="text-sm italic mb-3 md:mb-0">Your Altimate Manager</h2>
                         </div>
@@ -48,7 +48,7 @@ const Footercomp = () => {
                     </div>
                     <Footer.Divider/>
                     <div>
-                    <Footer.Copyright by="x-manager" className='text-center' year={new Date().getFullYear()} />
+                    <Footer.Copyright by="Jabana" className='text-center' year={new Date().getFullYear()} />
                     <div className="flex gap-6 mt-3 w-40 mx-auto">
                         <Footer.Icon href="#" icon={BsFacebook}/>
                         <Footer.Icon href="#" icon={BsInstagram}/>

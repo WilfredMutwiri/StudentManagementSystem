@@ -22,8 +22,8 @@ const AdminDashboard = () => {
             <div className=" w-full overflow-hidden ">
             <div className="flex justify-between">
             <div className="flex p-3">
-                <span className="text-orange-500 text-2xl bg-black p-1 rounded-md">X</span>
-                <h2 className="text-pink-700 text-2xl p-1">Manager</h2>
+                <span className="text-orange-500 text-2xl bg-black p-1 rounded-md">J</span>
+                <h2 className="text-pink-700 text-2xl p-1">abana</h2>
             </div>
             <div className="flex gap-0 md:gap-3 pr-2 md:pr-5 pt-4 -ml-2 md:-ml-0">
                 <h2 className='pt-2'>Admin</h2>
@@ -57,7 +57,7 @@ const AdminDashboard = () => {
                 </div>
                 {/* right section */}
                 <div className="bg-gray-200 rounded-md shadow-sm shadow-pink-500 p-3 flex-1" ref={bodyRef}>
-                    <h2 className="text-xl text-center font-semibold text-pink-500">Kilimani Secondary School</h2>
+                    <h2 className="text-xl text-center font-semibold text-pink-500">Mbitini Secondary School</h2>
                     <hr/>
                     <div className="block md:grid grid-cols-3 pt-3 gap-6">
                         {/* teachers div */}
