@@ -1,6 +1,6 @@
 import './style.css';
 import React from 'react';
-import { BrowserRouter as Router, Route,Link, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from "./Home";
 import Login from './login';
 import Signup from './Signup';
@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
     <div className="App">
-      <NavBarComp/>
+    <NavBarComp/>
     <Routes>
     <Route exact path='/' element={<Login/>}></Route>
      <Route path='/Home' element={<Home/>}></Route>

@@ -1,21 +1,31 @@
 
 import { IoMdClose } from "react-icons/io";
 import { GrUserWorker } from "react-icons/gr";
-import { RiSchoolFill } from "react-icons/ri";
 import { FaUsers } from "react-icons/fa";
-import { Button, TextInput } from 'flowbite-react';
 import profilePic from '../images/c42342e7743a6b9de0a54a599a591043.jpg'
-import { Link } from 'react-router-dom';
-import { CiMenuKebab } from "react-icons/ci";
-import { useRef } from "react";
+import { FaDatabase } from "react-icons/fa6";
+import { GiLovers } from "react-icons/gi";
+import { MdMenu } from "react-icons/md";
+
+
+import { useRef, useState } from "react";
+
+import TeachersSquare from "./TeachersSquare";
+import ParentsSquare from "./ParentsSquare";
+import WorkersSquare from "./WorkersSquare";
+import UpdatePage from "./updatePage";
 const AdminDashboard = () => {
     const menuRef=useRef()
     const menuIcon=useRef()
     const bodyRef=useRef()
+    const [visibleSection,setVisibleSection]=useState('updatePage')
     const handleRevealMenu=()=>{
         if(menuIcon.current  && menuRef.current){
             menuRef.current.style.display="none"
         }
+    }
+    const showSection=(section)=>{
+        setVisibleSection(section)
     }
     return (
         <div>
@@ -23,7 +33,7 @@ const AdminDashboard = () => {
             <div className=" w-full overflow-hidden ">
             <div className="flex justify-between">
             <div className="flex float-right">
-                <CiMenuKebab className="text-2xl text-black" ref={menuIcon} onClick={handleRevealMenu}/>
+                <MdMenu className="text-2xl text-black block md:hidden" ref={menuIcon} onClick={handleRevealMenu}/>
             </div>
             </div>
             </div>
@@ -32,14 +42,19 @@ const AdminDashboard = () => {
                     {/* left section */}
                 <div className="bg-gray-200 rounded-md p-4 shadow-sm shadow-pink-500 w-auto mb-5 md:mb-0" ref={menuRef}>
                     <div>
-                        <img className='h-36 rounded-full mx-auto' src={profilePic}/>
+                        <img className='h-36 rounded-full mx-auto' src={profilePic} alt="profilePic"/>
                     </div>
                     <h2 className='text-center p-3'>Admin <span className='text-pink-500'>@Mark</span></h2>
                     <div className='pt-4'>
                         <ul className='flex flex-col gap-5 text-center'>
-                            <li className='p-2 hover:bg-gray-100 rounded-md text-orange-500 hover:text-pink-500 cursor-pointer flex gap-3'><span><FaUsers className="text-xl"/></span>Teachers Square</li>
-                            <li className='p-2 hover:bg-gray-100 rounded-md text-orange-500 hover:text-pink-500 cursor-pointer flex gap-3'><span><RiSchoolFill className="text-xl"/></span>Parents Square</li>
-                            <li className='p-2 hover:bg-gray-100 rounded-md text-orange-500 hover:text-pink-500 cursor-pointer flex gap-3'><span><GrUserWorker className="text-xl"/></span>Workers Square</li>
+                            <li onClick={()=>showSection('updatePage')} className='p-2 hover:bg-gray-100 rounded-md text-orange-500 hover:text-pink-500 cursor-pointer flex gap-3'><span><FaDatabase className="text-xl"/></span>School Database</li>
+
+                            <li onClick={()=>showSection('teachers')} className='p-2 hover:bg-gray-100 rounded-md text-orange-500 hover:text-pink-500 cursor-pointer flex gap-3'><span><FaUsers className="text-xl"/></span>Teachers Square</li>
+
+                            <li onClick={()=>showSection('parents')} className='p-2 hover:bg-gray-100 rounded-md text-orange-500 hover:text-pink-500 cursor-pointer flex gap-3'><span><GiLovers className="text-xl"/></span>Parents Square</li>
+
+                            <li onClick={()=>showSection('workers')} className='p-2 hover:bg-gray-100 rounded-md text-orange-500 hover:text-pink-500 cursor-pointer flex gap-3'><span><GrUserWorker className="text-xl"/></span>Workers Square</li>
+
                         </ul>
                     </div>
                     <IoMdClose className="text-center mt-4 mx-auto hidden"/>
@@ -48,77 +63,20 @@ const AdminDashboard = () => {
                 <div className="bg-gray-200 rounded-md shadow-sm shadow-pink-500 p-3 flex-1" ref={bodyRef}>
                     <h2 className="text-xl text-center font-semibold text-pink-500">Mbitini Girls High School</h2>
                     <hr/>
-                    <div className="block md:grid grid-cols-3 pt-3 gap-6">
-                        {/* teachers div */}
-                        <div className="bg-gray-300 rounded-md p-3">
-                            <h2 className="text-center font-semibold text-orange-500">Teachers Square</h2>
-                            <div>
-                                <h2>Send Message to:</h2>
-                                <div className=" pt-3 flex flex-col gap-4">
-                                    <div className="flex gap-3">
-                                    <Button className="w-full">All Teachers</Button>
-                                    <Button gradientDuoTone="pinkToOrange">Send</Button>
-                                    </div>
-                                    <hr />
-                                    <div>
-                                    <Button className="w-full">All Teachers except</Button>
-                                    <TextInput type="text" className="mt-2 mb-2" placeholder="07 00 000 000"/>
-                                    <Button className="w-full" gradientDuoTone="pinkToOrange">Send</Button>
-                                    </div>
-                                    <hr />
-                                    <div>
-                                    <Button className="w-full">Special Teacher</Button>
-                                    <TextInput type="text" className="mt-2 mb-2" placeholder="07 00 000 000"/>
-                                    <Button className="w-full" gradientDuoTone="pinkToOrange">Send</Button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="bg-gray-300 rounded-md p-3 mt-6 md:mt-0"> 
-                            <h2 className="text-center font-semibold text-orange-500">Students' Parents Square</h2>
-                            <h2>Send Message to:</h2>
-                                <div className=" pt-3 flex flex-col gap-4">
-                                    <div className="flex gap-3">
-                                    <Button className="w-full">All Parents</Button>
-                                    <Button gradientDuoTone="pinkToOrange">Send</Button>
-                                    </div>
-                                    <hr />
-                                    <div>
-                                    <Button className="w-full">All Parents except</Button>
-                                    <TextInput type="text" className="mt-2 mb-2" placeholder="07 00 000 000"/>
-                                    <Button className="w-full" gradientDuoTone="pinkToOrange">Send</Button>
-                                    </div>
-                                    <hr />
-                                    <div>
-                                    <Button className="w-full">Special Parent</Button>
-                                    <TextInput type="text" className="mt-2 mb-2" placeholder="07 00 000 000"/>
-                                    <Button className="w-full" gradientDuoTone="pinkToOrange">Send</Button>
-                                    </div>
-                                </div>
-                        </div>
-                        <div className="bg-gray-300 rounded-md p-3 mt-6 md:mt-0">
-                        <h2 className="text-center font-semibold text-orange-500">Workers Square</h2>
-                            <h2>Send Message to:</h2>
-                                <div className=" pt-3 flex flex-col gap-4">
-                                    <div className="flex gap-3">
-                                    <Button className="w-full">All Workers</Button>
-                                    <Button gradientDuoTone="pinkToOrange">Send</Button>
-                                    </div>
-                                    <hr />
-                                    <div>
-                                    <Button className="w-full">All Workers except</Button>
-                                    <TextInput type="text" className="mt-2 mb-2" placeholder="07 00 000 000"/>
-                                    <Button className="w-full" gradientDuoTone="pinkToOrange">Send</Button>
-                                    </div>
-                                    <hr />
-                                    <div>
-                                    <Button className="w-full">Special Worker</Button>
-                                    <TextInput type="text" className="mt-2 mb-2" placeholder="07 00 000 000"/>
-                                    <Button className="w-full" gradientDuoTone="pinkToOrange">Send</Button>
-                                    </div>
-                                </div>
-                        </div>
-
+                                            {/* teachers div */}
+                    <div className={visibleSection==='teachers'?'':'hidden'}>
+                        <TeachersSquare className=""/>
+                    </div>
+                    {/* parents div */}
+                    <div className={visibleSection==='parents'?'':'hidden'}>
+                    <ParentsSquare className=""/>
+                    </div>
+                    {/* workers square */}
+                    <div className={visibleSection==='workers'?'':'hidden'}>
+                    <WorkersSquare className=""/>
+                    </div>
+                    <div className={visibleSection==='updatePage'?'':'hidden'}>
+                        <UpdatePage/>
                     </div>
                 </div>
                 </div>
