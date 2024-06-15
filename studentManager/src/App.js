@@ -14,6 +14,7 @@ function App() {
     <div className="App">
     <NavBarComp/>
     <Routes>
+    <Route path='/' element={<Landing/>}></Route>
     <Route exact path='/Landing' element={<Landing/>}></Route>
      <Route path='/Home' element={<Home/>}></Route>
      <Route path='/login' element={<Login/>}></Route>
