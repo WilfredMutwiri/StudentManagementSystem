@@ -1,20 +1,52 @@
 import { Button } from "flowbite-react";
 import TeachersUpdate from "./DatabaseUpdate/TeachersUpdate";
-import { useState } from "react";
+import { useState,useRef } from "react";
 import ParentsUpdate from "./DatabaseUpdate/ParentsUpdate";
 import WorkersUpdate from "./DatabaseUpdate/WorkersUpdate";
 
 const UpdatePage = () => {
     const [visibleSection,setVisibleSection]=useState('dashboard')
+    const teachersBtnRef=useRef(null);
+    const parentsBtnRef=useRef(null);
+    const workersBtnRef=useRef(null)
+
+    const teachersDivRef=useRef(null);
+    const parentsDivRef=useRef(null);
+    const workersDivRef=useRef(null)
+
     const showSection=(section)=>{
         setVisibleSection(section)
+    }
+    const revealTeachers=()=>{
+        if(teachersBtnRef.current && teachersDivRef.current){
+            teachersDivRef.current.style.display="block";
+            parentsDivRef.current.style.display="none";
+            workersDivRef.current.style.display="none"
+
+
+        }
+    }
+    const revealParents=()=>{
+        if(parentsBtnRef.current && parentsDivRef.current){
+            parentsDivRef.current.style.display="block";
+            teachersDivRef.current.style.display="none";
+            workersDivRef.current.style.display="none"
+        }
+    }
+    const revealWorkers=()=>{
+    if(workersBtnRef.current && workersDivRef.current){
+        workersDivRef.current.style.display="block"
+        parentsDivRef.current.style.display="none";
+        teachersDivRef.current.style.display="none";
+
+    }
     }
     return (
         <div>
             <div className={visibleSection==='dashboard'?'':'hidden'}>
             <div className="w-full block md:grid grid-cols-3 gap-4 mt-4">
             {/* Teachers div */}
-            <div className="bg-gray-50 p-1 rounded-md ">
+            <div className={`bg-gray-50 p-1 rounded-md`} ref={teachersDivRef}>
                 <h2 className="p-2 text-center text-lg text-pink-700">Available Teachers</h2>
                 <hr />
                 <div>
@@ -31,7 +63,7 @@ const UpdatePage = () => {
                 </div>
             </div>
             {/* parents div */}
-            <div className="bg-gray-50 p-1 rounded-md hidden">
+            <div className={`bg-gray-50 p-1 rounded-md hidden md:block`} ref={parentsDivRef}>
                 <h2 className="p-2 text-center text-lg text-pink-700">Available Student's Parents</h2>
                 <hr />
                 <div>
@@ -48,7 +80,7 @@ const UpdatePage = () => {
                 </div>
             </div>
             {/* workers div */}
-            <div className="bg-gray-50 p-1 rounded-md hidden">
+            <div className={`bg-gray-50 p-1 rounded-md hidden md:block`} ref={workersDivRef}>
                 <h2 className="p-2 text-center text-lg text-pink-700">Available Workers</h2>
                 <hr />
                 <div>
@@ -65,7 +97,14 @@ const UpdatePage = () => {
                 </div>
             </div>
         </div>
-            </div>
+        <div className="flex md:hidden gap-3 mt-5">
+            <hr />
+            <Button onClick={revealTeachers} ref={teachersBtnRef}>Teachers</Button>
+            <Button onClick={revealParents} ref={parentsBtnRef}>Parents</Button>
+            <Button onClick={revealWorkers} ref={workersBtnRef}>Workers</Button>
+
+        </div>
+        </div>
         <div className={visibleSection==='teachers'?'':'hidden'}>
                 <TeachersUpdate/>
         </div>

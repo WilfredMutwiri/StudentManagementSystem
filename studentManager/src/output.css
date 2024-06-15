@@ -1873,6 +1873,10 @@ input:checked + .toggle-bg {
   width: 1.25rem;
 }
 
+.w-5\/12 {
+  width: 41.666667%;
+}
+
 .w-6 {
   width: 1.5rem;
 }
@@ -7604,6 +7608,10 @@ input:checked + .toggle-bg {
 
   .md\:flex {
     display: flex;
+  }
+
+  .md\:grid {
+    display: grid;
   }
 
   .md\:hidden {

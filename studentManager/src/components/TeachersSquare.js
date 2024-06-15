@@ -1,11 +1,11 @@
-import { Button, TextInput, Textarea } from "flowbite-react";
+import { Button, Label, TextInput, Textarea } from "flowbite-react";
 
 const TeachersSquare = () => {
     return (
         <div>
             <div className="bg-gray-300 rounded-md p-3 w-full mt-4">
                             <h2 className="text-center font-semibold text-orange-500">Teachers Square</h2>
-                            <div className="flex gap-6">
+                            <div className="block md:flex gap-6">
                                 <div className=" pt-3 flex flex-col gap-4 flex-1">
                                 <h2>Send Message to:</h2>
                                     <div className="flex gap-3">
@@ -13,12 +13,12 @@ const TeachersSquare = () => {
                                     </div>
                                     <hr />
                                     <div>
-                                    <Button className="w-full">All Teachers except</Button>
+                                    <Label value="All Teachers Except"/>
                                     <TextInput type="text" className="mt-2 mb-2" placeholder="07 00 000 000"/>
                                     </div>
                                     <hr />
                                     <div>
-                                    <Button className="w-full">Special Teacher</Button>
+                                    <Label value="Special Teacher"/>
                                     <TextInput type="text" className="mt-2 mb-2" placeholder="07 00 000 000"/>
                                     </div>
                                 </div>

@@ -7,13 +7,14 @@ import Signup from './Signup';
 import AdminDashboard from './components/AdminDashboard';
 import Footer from './components/footer';
 import { NavBarComp } from './components/NavBar';
+import Landing from './components/Landing';
 function App() {
   return (
     <Router>
     <div className="App">
     <NavBarComp/>
     <Routes>
-    <Route exact path='/' element={<Login/>}></Route>
+    <Route exact path='/Landing' element={<Landing/>}></Route>
      <Route path='/Home' element={<Home/>}></Route>
      <Route path='/login' element={<Login/>}></Route>
      <Route path='/Signup' element={<Signup/>}></Route>

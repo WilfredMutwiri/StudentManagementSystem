@@ -1,16 +1,7 @@
 import {Link,useNavigate} from 'react-router-dom'
 import {Button, Label, TextInput} from 'flowbite-react'
 const Login = () => {
-    const  navigate=useNavigate();
-    const handleLogin=()=>{
-        let userSelect=prompt("Login as 1.Admin, 2.User (select 1 or 2)")
-        if(userSelect=1){
-            let adminConfirm=prompt("Enter admin login password")
-            if(adminConfirm=1234){
-                navigate('/admin')
-            }
-        }
-    }
+
     return (
         <div className="w-full">
             <hr/>
@@ -33,7 +24,9 @@ const Login = () => {
                         <TextInput placeholder='mark@gmail.com' type='email'/>
                         <Label value='Your Password'/>
                         <TextInput placeholder='*******' type='password'/>
-                        <Button onClick={handleLogin} gradientDuoTone='pinkToOrange'>Login</Button>
+                        <Link to="/admin">
+                        <Button  gradientDuoTone='pinkToOrange'className='w-full'>Login</Button>
+                        </Link>
                     </form>
                     <p className='pt-3 text-sm'>
                         Don't have an account? <span className='text-blue-600'><a href='/Signup'>Create Account</a></span>

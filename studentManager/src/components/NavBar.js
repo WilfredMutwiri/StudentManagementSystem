@@ -12,7 +12,7 @@ export function NavBarComp() {
         <h2 className="text-pink-700 text-2xl p-1">abana</h2>
         </div>
       </Navbar.Brand>
-      <div className="flex md:order-2">
+      <div className="flex md:order-2 ml-32 md:ml-0">
         <Button gradientDuoTone="pinkToOrange">Login</Button>
       </div>
       <hr/>

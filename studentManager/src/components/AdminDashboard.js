@@ -14,15 +14,16 @@ import TeachersSquare from "./TeachersSquare";
 import ParentsSquare from "./ParentsSquare";
 import WorkersSquare from "./WorkersSquare";
 import UpdatePage from "./updatePage";
+import { Button } from "flowbite-react";
+import { Link } from "react-router-dom";
 const AdminDashboard = () => {
-    const menuRef=useRef()
-    const menuIcon=useRef()
-    const bodyRef=useRef()
     const [visibleSection,setVisibleSection]=useState('updatePage')
+    const [menuVisible,setMenuVisible]=useState(true)
     const handleRevealMenu=()=>{
-        if(menuIcon.current  && menuRef.current){
-            menuRef.current.style.display="none"
-        }
+        setMenuVisible(!menuVisible)
+    }
+    const handleCloseMenu=()=>{
+        setMenuVisible(!menuVisible)
     }
     const showSection=(section)=>{
         setVisibleSection(section)
@@ -32,15 +33,15 @@ const AdminDashboard = () => {
             <hr />
             <div className=" w-full overflow-hidden ">
             <div className="flex justify-between">
-            <div className="flex float-right">
-                <MdMenu className="text-2xl text-black block md:hidden" ref={menuIcon} onClick={handleRevealMenu}/>
+            <div className="flex md:hidden bg-gray-200 w-full">
+                <MdMenu className="text-3xl text-black block md:hidden" onClick={handleRevealMenu}/>
             </div>
             </div>
             </div>
             <section>
                 <div className="block md:flex w-11/12 m-auto mt-10 gap-10">
                     {/* left section */}
-                <div className="bg-gray-200 rounded-md p-4 shadow-sm shadow-pink-500 w-auto mb-5 md:mb-0" ref={menuRef}>
+                <div className={`-mt-7  bg-gray-200 rounded-md p-4 shadow-sm shadow-pink-5x00 w-auto mb-5 md:mb-0 ${menuVisible ? 'block':'hidden'}`}>
                     <div>
                         <img className='h-36 rounded-full mx-auto' src={profilePic} alt="profilePic"/>
                     </div>
@@ -54,13 +55,15 @@ const AdminDashboard = () => {
                             <li onClick={()=>showSection('parents')} className='p-2 hover:bg-gray-100 rounded-md text-orange-500 hover:text-pink-500 cursor-pointer flex gap-3'><span><GiLovers className="text-xl"/></span>Parents Square</li>
 
                             <li onClick={()=>showSection('workers')} className='p-2 hover:bg-gray-100 rounded-md text-orange-500 hover:text-pink-500 cursor-pointer flex gap-3'><span><GrUserWorker className="text-xl"/></span>Workers Square</li>
-
                         </ul>
+                        <Link to="/Landing">
+                        <Button className="w-full mt-4" outline>Exit</Button>
+                        </Link>
                     </div>
-                    <IoMdClose className="text-center mt-4 mx-auto hidden"/>
+                    <IoMdClose className="text-center mt-4 mx-auto block md:hidden" onClick={handleCloseMenu}/>
                 </div>
                 {/* right section */}
-                <div className="bg-gray-200 rounded-md shadow-sm shadow-pink-500 p-3 flex-1" ref={bodyRef}>
+                <div className="bg-gray-200 rounded-md shadow-sm shadow-pink-500 p-3 flex-1">
                     <h2 className="text-xl text-center font-semibold text-pink-500">Mbitini Girls High School</h2>
                     <hr/>
                                             {/* teachers div */}
